@@ -11,7 +11,15 @@ app.use(express.static("public"));
 
 // Route för att dirigera besökare till en sida
 app.get("/", (req, res) => {
-    res.send("Hello from Express!");
+    res.render("index"); // Renderar startsidan
+});
+
+app.get("/addcourse", (req, res) => {
+    res.render("addcourse"); // Renderar undersida
+});
+
+app.get("/about", (req, res) => {
+    res.render("about"); // Renderar undersida
 });
 
 // Startar applikationen
