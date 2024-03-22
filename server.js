@@ -35,13 +35,14 @@ connection.connect((error) => {
 // Route för att dirigera besökare till en sida
 app.get("/", async (req, res) => {
     // Läser ut information från databasen genom SQL-fråga
-    connection.query("SELECT * from course", (error, result) => {
+    connection.query("SELECT * from Course", (error, results) => {
+        console.log(results);
         if (error) {
             console.log("Fel vid SQL-fråga");
         } else {
             res.render("index", {
-                courses: result.rows
-            }); // Renderar startsidan och skickar med alla rader från resultatet
+                courses: results
+            }); // Renderar startsidan och skickar med resultatet
         }
     });
 });
