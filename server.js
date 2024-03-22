@@ -51,7 +51,12 @@ app.post("/", async (req, res) => {
     const name = req.body.name;
     const syllabus = req.body.syllabus;
     const progression = req.body.progression;
-})
+
+    // Skapar SQL fråga för inserts och sätter värdena till den inlästa datan
+    const result = await connection.query("INSERT INTO Course(CourseCode, CourseName, Syllabus, Progression)VALUES(?, ?, ?, ?)",
+        [code, name, syllabus, progression]
+    );
+});
 
 // Startar applikationen
 app.listen(port, () => {
