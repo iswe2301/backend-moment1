@@ -56,6 +56,7 @@ app.post("/", async (req, res) => {
     const result = await connection.query("INSERT INTO Course(CourseCode, CourseName, Syllabus, Progression)VALUES(?, ?, ?, ?)",
         [code, name, syllabus, progression]
     );
+    res.redirect("/"); // Omdirigerar till startsidan för att visa kurser
 });
 
 // Startar applikationen
