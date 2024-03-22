@@ -5,22 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Demowebb | Lägg till kurser</title>
+    <script src="js/main.ts" type="module"></script>
+    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
+    <title>Isa Westling | Lägg till kurser</title>
 </head>
 
 <body>
     <header>
-        <h1>Demowebb</h1>
+        <h1>Isa Westling</h1>
         <nav>
             <ul>
-                <li><a href="/">Kurser</a></li>
+                <li><a href="/">Mina kurser</a></li>
                 <li><a href="/addcourse">Lägg till kurser</a></li>
                 <li><a href="/about">Om sidan</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Lägg till kurser</h2>
+        <!-- Formulär för att lägga till en ny kurs -->
+        <section id="add-section">
+            <h2>Lägg till kurs</h2>
+            <form id="form-container" method="post">
+                <label for="code">Kurskod</label>
+                <input type="text" id="code" name="code" placeholder="Ange kurskod" required>
+                <label for="name">Kursnamn</label>
+                <input type="text" id="name" name="name" placeholder="Ange kursnamn" required>
+                <label for="syllabus">Kursplan</label>
+                <input type="url" id="syllabus" name="syllabus" placeholder="Ange URL till kursplan" required>
+                <label for="progression">Progression</label>
+                <select id="progression" name="progression">
+                    <option value="">Välj progression</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                </select>
+                <button type="submit" id="submit">Lägg till kurs <i class="fa fa-solid fa-plus"></i></button>
+            </form>
+        </section>
     </main>
 </body>
 
