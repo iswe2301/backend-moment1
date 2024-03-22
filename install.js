@@ -36,7 +36,7 @@ connection.query(`CREATE TABLE Course (
     CourseCode  VARCHAR(15) NOT NULL,
     CourseName  VARCHAR(150) NOT NULL,
     Syllabus    VARCHAR(255) NOT NULL,
-    Progression VARCHAR(2) NOT NULL,
+    Progression CHAR(1) NOT NULL,
     CreateDate  DATETIME DEFAULT CURRENT_TIMESTAMP)`, (error, results) => {
     if (error) throw error;
     console.log("Tabellen Course skapad.");
