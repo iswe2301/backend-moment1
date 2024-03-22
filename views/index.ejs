@@ -5,22 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Demowebb | Kurser</title>
+    <script src="js/main.ts" type="module"></script>
+    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
+    <title>Isa Westling | Mina kurser</title>
 </head>
 
 <body>
     <header>
-        <h1>Demowebb</h1>
+        <h1>Isa Westling</h1>
         <nav>
             <ul>
-                <li><a href="/">Kurser</a></li>
+                <li><a href="/">Mina kurser</a></li>
                 <li><a href="/addcourse">Lägg till kurser</a></li>
                 <li><a href="/about">Om sidan</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Kurser</h2>
+        <h2>Mina kurser</h2>
+        <!-- Tabell för att visa tillagda kurser -->
+        <section id="course-section">
+            <h2>Mina kurser</h2>
+            <div id="responsive-table">
+                <table id="table-container">
+                    <thead>
+                        <tr>
+                            <th>Kurskod</th>
+                            <th>Kursnamn</th>
+                            <th>Kursplan</th>
+                            <th>Progression</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courses">
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 </body>
 
