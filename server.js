@@ -45,6 +45,14 @@ app.get("/about", async (req, res) => {
     res.render("about"); // Renderar undersida
 });
 
+// Tar emot formulärdata och läser in den skickade datan från formuläret
+app.post("/", async (req, res) => {
+    const code = req.body.code;
+    const name = req.body.name;
+    const syllabus = req.body.syllabus;
+    const progression = req.body.progression;
+})
+
 // Startar applikationen
 app.listen(port, () => {
     console.log("Server startad på port: " + port);
