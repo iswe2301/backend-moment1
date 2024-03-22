@@ -1,0 +1,234 @@
+@charset "UTF-8";
+#submit, .delete-btn, .edit-btn {
+  background-color: #1b60e0;
+  color: white;
+  font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
+  margin: 2rem 0;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  font-size: 2.2rem;
+  width: 100%;
+  height: auto;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#submit:hover, .delete-btn:hover, .edit-btn:hover {
+  background-color: #1b60e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  background-color: #daedf3;
+  color: #333;
+  height: 100%;
+}
+
+/* Styling för rubriker, mixin för gemensamma egenskaper */
+h1 {
+  font-size: 3rem;
+  font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
+  color: rgb(32, 32, 32);
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  line-height: 4rem;
+  text-align: center;
+  color: rgb(32, 32, 32);
+  margin: 4rem 0 0 0;
+}
+
+h2 {
+  font-size: 2.6rem;
+  font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
+  color: rgb(32, 32, 32);
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  line-height: 3.6rem;
+  margin: 4rem 0 0 0;
+}
+
+h3 {
+  font-size: 2.2rem;
+  font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
+  color: rgb(32, 32, 32);
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  line-height: 3.2rem;
+  margin: 2rem 0 2rem 0;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.4rem;
+    letter-spacing: 0.2rem;
+    margin: 2rem 0 0 0;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
+p {
+  margin: 1.5rem 0;
+  max-width: 75ch;
+}
+
+section {
+  width: 100%;
+  max-width: 900px;
+}
+
+a {
+  color: #1b60e0;
+}
+a:hover {
+  color: #1b60e0;
+}
+
+input,
+select {
+  font-size: 1.4rem;
+  font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
+  color: rgb(32, 32, 32);
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  line-height: 2.4rem;
+  color: #333;
+  height: 3rem;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 0 2rem 0;
+  border-radius: 5px;
+}
+
+label {
+  font-size: 1.6rem;
+  font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
+  color: rgb(32, 32, 32);
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  line-height: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+#blank {
+  width: 100%;
+  height: 5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  margin: 5% auto;
+  padding: 2rem 4rem;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 0 0;
+}
+
+form {
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+}
+
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+}
+table th {
+  padding: 0 1rem;
+  text-align: center;
+  background-color: rgb(201, 201, 214);
+  border-bottom: 1px solid #ccc;
+}
+table td {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+table tbody tr:hover {
+  background-color: #eaeaea;
+}
+
+#responsive-table {
+  overflow-x: auto;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+    margin: 10% auto;
+    padding: 1.5rem;
+  }
+}
+/* STYLING FÖR KNAPPAR */
+#submit {
+  width: 50%;
+  height: 4rem;
+  margin: 2rem 0 0 50%;
+  font-size: 1.6rem;
+  background-color: rgb(34, 122, 16);
+}
+#submit:hover {
+  background-color: #154d0a;
+}
+
+.delete-btn {
+  width: 12rem;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 58, 58);
+}
+.delete-btn:hover {
+  background-color: #de1515;
+}
+
+.edit-btn {
+  font-size: 1.4rem;
+  width: 12rem;
+  height: 2.6rem;
+  padding: 0;
+  background-color: rgb(240, 153, 53);
+}
+.edit-btn:hover {
+  background-color: #e18011;
+}
+
+@media (max-width: 600px) {
+  #submit {
+    width: 100%;
+    margin: 2rem 0 0 0;
+  }
+}
