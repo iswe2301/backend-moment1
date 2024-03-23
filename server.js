@@ -47,6 +47,24 @@ app.get("/", async (req, res) => {
     });
 });
 
+// Skapar en route för att hantera GET-förfrågningar
+app.get("/delete-course/:id", async (req, res) => {
+    // Hämtar kursens ID från URL-parametern ':id'
+    const courseId = req.params.id;
+    // Ställer en SQL-fråga för att ta bort en kurs med det specifika ID:t från databasen
+    const results = await connection.query("DELETE FROM Course WHERE CourseID = ?", [courseId], (error, results) => {
+        // Kontrollerar och loggar om det finns ett fel vid körning
+        if (error) {
+            console.error("Fel vid borttagning av kurs: " + error);
+        } else {
+            // Annars loggas kursen som raderades
+            console.log("Kurs raderad med ID: ", courseId);
+            // Omdirigerar besökaren tillbaka till startsidan efter att ha raderat kursen
+            res.redirect("/");
+        }
+    });
+});
+
 app.get("/addcourse", async (req, res) => {
     res.render("addcourse"); // Renderar undersida
 });
