@@ -6,7 +6,7 @@ main {
   background: abstracts.$bg-color-white;
   width: 80%;
   max-width: 1200px;
-  height: auto;
+  min-height: 100vh;
   margin: 5% auto;
   padding: 2rem 4rem;
   position: relative;
@@ -26,7 +26,7 @@ nav {
   justify-content: center;
   border-top: 1px solid abstracts.$nav-color;
   border-bottom: 1px solid abstracts.$nav-color;
-  margin: 3rem 20% 0 20%;
+  margin: 3rem 10% 0 10%;
   padding: 1rem;
 
   ul {
@@ -40,6 +40,10 @@ nav {
       }
     }
   }
+}
+
+.menu-container {
+  display: none;
 }
 
 // Styling för formulär
@@ -80,6 +84,117 @@ table {
 #responsive-table {
   overflow-x: auto;
   width: 100%;
+}
+
+// Footer
+footer {
+  width: 100%;
+  height: auto;
+  padding: 2rem 1rem;
+  margin: 5rem 0 0 0;
+  background-color: abstracts.$primary-color;
+  color: abstracts.$light-text-color;
+  text-align: center;
+
+  p {
+    margin: 0;
+    max-width: none;
+  }
+}
+
+// Styling för enheter mindre än 800px bredd
+@media (max-width: 800px) {
+
+  // Döljer nav-menyn
+  #menu {
+    display: none;
+  }
+
+  nav {
+    margin: 0;
+    border: none;
+
+    ul {
+      flex-direction: column; // Ändrar flex-direction
+      margin-top: 8rem;
+
+      li {
+        margin: 1rem 0;
+
+        a {
+          padding: 1rem;
+          color: abstracts.$light-text-color;
+        }
+      }
+    }
+  }
+
+  // Container för mobilmenyn, fixerad längst ner på skärmen
+  .menu-container {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end; // Justerar menyknapp till slutet av containern (höger)
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    background-color: abstracts.$mobile-nav-color;
+    z-index: 2;
+  }
+
+  // Styling för mobilmeny, fixerad position
+  .mobile-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 50% 50% 0 0; // Ger toppkanterna en rundad form
+    background-color: abstracts.$mobile-nav-color;
+    transform: translateY(100%); // Initialt flyttad 100% nedåt, vilket döljer menyn
+    transition: transform 0.3s ease; // Animationstiden för att visa/dölja menyn
+    z-index: 1; // Ser till att menyn är under menyknappen
+  }
+
+  // Styling när klassen .show läggs till
+  .mobile-menu.show {
+    transform: translateY(0); // Glider upp och täcker 50 % av skärmen från botten
+  }
+
+
+  // Styling för menyknappen
+  .menu-toggle {
+    background-color: abstracts.$mobile-nav-color;
+    color: white !important;
+    border: none;
+    @include abstracts.heading-style(2.5rem, 2.5rem, 600);
+    padding: 0 6rem 0 0;
+    z-index: 3; // Ser till att knappen är över både menyn och container
+
+    // Stylingr för ikonerna inom .menu-toggle
+    i {
+      transition: transform 0.3s ease, opacity 0.3s ease; // Animerar rotation och opacitet
+      position: absolute; // Absolut positionering i förhållande till .menu-toggle
+      top: 50%;
+      right: 1rem;
+      transform: translate(-50%, -50%) rotate(0deg); // Centrerar och ingen initial rotation
+      transform-origin: 50% 50%; // Rotationscentrum i ikonens mitt
+    }
+
+    // Specifika stilar när .fa-bars är aktiv
+    .fa-bars {
+      opacity: 1; // Gör menyikonen synlig initialt
+    }
+
+    // Specifika stilar när .fa-xmark är aktiv
+    .fa-xmark {
+      opacity: 0; // Gör kryssikonen är osynlig initialt
+      transform: translate(-50%, -50%) rotate(-360deg); // Startläge för rotationen vid övergång
+    }
+  }
+
+  footer {
+    padding-bottom: 7rem;
+  }
 }
 
 // Styling vid enheter mindre än 600px bredd
