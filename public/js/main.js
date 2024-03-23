@@ -5,10 +5,12 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuIcon = document.querySelector('.fa-bars');
 const closeIcon = document.querySelector('.fa-xmark');
+const containerEl = document.getElementById("overlay");
 
 // Skapar klickhändelselyssnare för menyknappen, anonym funktion
 menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('show'); // Växlar mellan klassen show för att visa/dölja mobilmenyn
+    containerEl.classList.toggle("opacity"); // Växlar mellan visa/dölja opacity när menyn klickas
 
     // Kontrollerar om mobilmenyn visas eller inte
     if (mobileMenu.classList.contains('show')) {
