@@ -7,7 +7,7 @@ main {
   width: 80%;
   max-width: 1200px;
   min-height: 100vh;
-  margin: 5% auto;
+  margin: 0 auto;
   padding: 2rem 4rem;
   position: relative;
 }
@@ -17,7 +17,12 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 0 0 0;
+  align-items: center;
+  padding: 2rem;
+
+  img {
+    max-width: 1200px;
+  }
 }
 
 // Nav
@@ -26,20 +31,31 @@ nav {
   justify-content: center;
   border-top: 1px solid abstracts.$nav-color;
   border-bottom: 1px solid abstracts.$nav-color;
-  margin: 3rem 10% 0 10%;
-  padding: 1rem;
+  margin: 5rem 10% 5rem 10%;
+  padding: 2rem;
 
   ul {
     display: flex;
 
     li {
       list-style-type: none;
+      margin: 0 1rem;
 
       a {
         @extend %nav-style;
       }
     }
   }
+}
+
+#active {
+  color: abstracts.$link-color;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-underline-offset: 0.5rem;
+  background-color: abstracts.$bg-color-white;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 5px;
 }
 
 .menu-container {
@@ -124,6 +140,10 @@ footer {
         a {
           padding: 1rem;
           color: abstracts.$light-text-color;
+
+          &:active {
+            color: black;
+          }
         }
       }
     }
@@ -140,6 +160,7 @@ footer {
     text-align: center;
     background-color: abstracts.$mobile-nav-color;
     z-index: 2;
+    box-shadow: 0px -4px 10px 0px rgb(0 0 0 / 30%); // Skugga på mobilmeny-containern
   }
 
   // Styling för mobilmeny, fixerad position
@@ -150,9 +171,10 @@ footer {
     height: 50%;
     border-radius: 50% 50% 0 0; // Ger toppkanterna en rundad form
     background-color: abstracts.$mobile-nav-color;
-    transform: translateY(100%); // Initialt flyttad 100% nedåt, vilket döljer menyn
-    transition: transform 0.3s ease; // Animationstiden för att visa/dölja menyn
+    transform: translateY(105%); // Initialt flyttad 105% nedåt, vilket döljer menyn och skuggan
+    transition: transform 0.5s ease; // Animationstiden för att visa/dölja menyn
     z-index: 1; // Ser till att menyn är under menyknappen
+    box-shadow: 0 -8px 12px 2px rgb(0 0 0 / 20%); // Skugga på mobilmenyn
   }
 
   // Styling när klassen .show läggs till
@@ -194,14 +216,16 @@ footer {
 
   footer {
     padding-bottom: 7rem;
+    margin: 0;
   }
-}
 
-// Styling vid enheter mindre än 600px bredd
-@media (max-width: 600px) {
   main {
     width: 100%;
-    margin: 10% auto;
-    padding: 1.5rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 5% 1.5rem;
+  }
+
+  header {
+    padding: 1rem;
   }
 }
