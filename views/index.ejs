@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <script src="js/main.ts" type="module"></script>
+    <script src="js/main.js" type="module"></script>
     <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
     <title>Isa Westling | Kurser</title>
 </head>
@@ -13,11 +13,11 @@
 <body>
     <header>
         <h1>Isa Westling</h1>
-        <nav>
+        <nav id="menu">
             <ul>
-                <li><a href="/">Kurser</a></li>
-                <li><a href="/addcourse">Lägg till kurser</a></li>
-                <li><a href="/about">Om sidan</a></li>
+                <li><a href="/">KURSER</a></li>
+                <li><a href="/addcourse">LÄGG TILL KURS</a></li>
+                <li><a href="/about">OM SIDAN</a></li>
             </ul>
         </nav>
     </header>
@@ -34,6 +34,7 @@
                             <th>Kursnamn</th>
                             <th>Kursplan</th>
                             <th>Progression</th>
+                            <th></th> <!-- Tom rubrik för radera-knappen -->
                         </tr>
                     </thead>
                     <!-- Loopar genom alla kurser från resultatet, skriver ut en ny ras i tabellen för varje kurs med tabellceller för datan -->
@@ -50,6 +51,10 @@
                                 <td>
                                     <%= course.Progression %>
                                 </td>
+                                <td>
+                                    <a href="/delete-course/<%= course.CourseID %>" class="delete-btn">Radera <i
+                                            class='fa fa-solid fa-trash-can'></i></a>
+                                </td>
                             </tr>
                             <% }); %>
                     </tbody>
@@ -57,6 +62,21 @@
             </div>
         </section>
     </main>
+    <div class="menu-container">
+        <nav class="mobile-menu hidden">
+            <ul>
+                <li><a href="/">KURSER</a></li>
+                <li><a href="/addcourse">LÄGG TILL KURS</a></li>
+                <li><a href="/about">OM SIDAN</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle">MENY <i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <footer>
+        <p>&copy; 2024 Isa Westling</p>
+        <p>DT207G Backend-baserad webbutveckling</p>
+        <p>Webbutvecklingsprogrammet, Mittuniversitetet</p>
+    </footer>
 </body>
 
 </html>
