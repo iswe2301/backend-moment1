@@ -18,10 +18,14 @@
 
 .delete-btn {
     @extend %button-style;
-    width: 12rem;
-    font-size: 1.4rem;
+    width: 11rem;
+    font-size: 1.6rem;
     padding: 0.5rem;
     background-color: abstracts.$delete-btn-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 
     &:hover {
         background-color: darken(abstracts.$delete-btn-color, 10%);
