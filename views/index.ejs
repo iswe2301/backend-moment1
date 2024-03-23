@@ -8,21 +8,23 @@
     <script src="js/main.js" type="module"></script>
     <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
     <title>Isa Westling | Kurser</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
+    <div id="overlay" class="hidden"></div>
     <header>
-        <h1>Isa Westling</h1>
+        <a href="/"><img src="../images/logo.svg"></a>
         <nav id="menu">
             <ul>
-                <li><a href="/">KURSER</a></li>
+                <li><a id="active" href="/">KURSER</a></li>
                 <li><a href="/addcourse">LÄGG TILL KURS</a></li>
                 <li><a href="/about">OM SIDAN</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Kurser</h2>
+        <h1>Kurser</h1>
         <!-- Tabell för att visa tillagda kurser -->
         <section id="course-section">
             <h2>Mina kurser</h2>
