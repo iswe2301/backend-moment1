@@ -15,8 +15,31 @@ main {
 // Header
 header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 2rem 0 0 0;
+}
+
+// Nav
+nav {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid abstracts.$nav-color;
+  border-bottom: 1px solid abstracts.$nav-color;
+  margin: 3rem 20% 0 20%;
+  padding: 1rem;
+
+  ul {
+    display: flex;
+
+    li {
+      list-style-type: none;
+
+      a {
+        @extend %nav-style;
+      }
+    }
+  }
 }
 
 // Styling för formulär
