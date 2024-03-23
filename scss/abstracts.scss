@@ -7,6 +7,7 @@ $primary-color: rgb(32, 32, 32);
 $secondary-color: rgb(34, 112, 185);
 $light-grey-color: rgb(201, 201, 214);
 $link-color: #1b60e0;
+$nav-color: rgb(77, 74, 75);
 $sub-head-color: #05081f;
 $hover-color: darken($link-color, 0%);
 $table-hover: #eaeaea;
@@ -37,7 +38,7 @@ $delete-btn-color: rgb(236, 58, 58);
     }
 }
 
-// Mixin för flesx och centering av layout
+// Mixin för flex och centering av layout
 @mixin center-flex() {
     display: flex;
     flex-direction: column;
@@ -52,4 +53,20 @@ $delete-btn-color: rgb(236, 58, 58);
     font-weight: $font-weight;
     letter-spacing: 0.2rem;
     line-height: $line-height;
+}
+
+// Extend för navlänkar
+%nav-style {
+    font-size: 2rem;
+    font-family: $font-heading;
+    color: $nav-color;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    padding: 0 2rem;
+
+    &:hover {
+        text-decoration: underline;
+        color: darken($nav-color, 10%);
+    }
 }

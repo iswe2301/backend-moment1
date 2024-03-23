@@ -18,6 +18,20 @@
   background-color: #1b60e0;
 }
 
+nav ul li a {
+  font-size: 2rem;
+  font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
+  color: rgb(77, 74, 75);
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  padding: 0 2rem;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #333132;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -148,10 +162,25 @@ main {
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 2rem 0 0 0;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(77, 74, 75);
+  border-bottom: 1px solid rgb(77, 74, 75);
+  margin: 3rem 20% 0 20%;
+  padding: 1rem;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style-type: none;
+}
 form {
   flex-direction: column;
   width: 100%;
@@ -206,10 +235,13 @@ table tbody tr:hover {
 }
 
 .delete-btn {
-  width: 12rem;
-  font-size: 1.4rem;
+  width: 11rem;
+  font-size: 1.6rem;
   padding: 0.5rem;
   background-color: rgb(236, 58, 58);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .delete-btn:hover {
   background-color: #de1515;
