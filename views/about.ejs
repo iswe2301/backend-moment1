@@ -5,24 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <script src="js/main.ts" type="module"></script>
+    <script src="js/main.js" type="module"></script>
     <title>Isa Westling | Om sidan</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
+    <div id="overlay" class="hidden"></div>
     <header>
-        <h1>Isa Westling</h1>
-        <nav>
+        <a href="/"><img src="../images/logo.svg"></a>
+        <nav id="menu">
             <ul>
-                <li><a href="/">Mina kurser</a></li>
-                <li><a href="/addcourse">Lägg till kurser</a></li>
-                <li><a href="/about">Om sidan</a></li>
+                <li><a href="/">KURSER</a></li>
+                <li><a href="/addcourse">LÄGG TILL KURS</a></li>
+                <li><a id="active" href="/about">OM SIDAN</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Om sidan</h2>
+        <h1>Om sidan</h1>
     </main>
+    <div class="menu-container">
+        <nav class="mobile-menu hidden">
+            <ul>
+                <li><a href="/">KURSER</a></li>
+                <li><a href="/addcourse">LÄGG TILL KURS</a></li>
+                <li><a href="/about">OM SIDAN</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle">MENY <i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <footer>
+        <p>&copy; 2024 Isa Westling</p>
+        <p>DT207G Backend-baserad webbutveckling</p>
+        <p>Webbutvecklingsprogrammet, Mittuniversitetet</p>
+    </footer>
 </body>
 
 </html>
