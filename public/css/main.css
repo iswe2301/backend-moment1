@@ -342,7 +342,7 @@ footer p {
   }
   main {
     width: 100%;
-    margin: 0 auto;
+    margin: 2rem auto 5rem auto;
     padding: 1.5rem 1.5rem 5% 1.5rem;
   }
   header {
