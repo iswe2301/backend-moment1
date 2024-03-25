@@ -4,14 +4,15 @@ $font-heading: "Montserrat", 'Roboto', Helvetica, sans-serif;
 $background-color: rgb(255, 255, 255);
 $bg-color-white: rgb(238, 238, 238);
 $primary-color: rgb(32, 32, 32);
+$basic-black: black;
 $secondary-color: rgb(34, 112, 185);
-$light-grey-color: rgb(255, 219, 225);
+$light-grey-color: rgb(190, 190, 190);
 $link-color: hotpink;
 $nav-color: rgb(77, 74, 75);
 $mobile-nav-color: hotpink;
 $sub-head-color: #05081f;
-$hover-color: darken($link-color, 0%);
-$table-hover: #eaeaea;
+$hover-color: darken($link-color, 10%);
+$table-hover: darken($bg-color-white, 10%);
 $text-color: #333;
 $light-text-color: white;
 $add-btn-color: rgb(34, 122, 16);
@@ -60,7 +61,7 @@ $delete-btn-color: rgb(236, 58, 58);
 %nav-style {
     font-size: 2rem;
     font-family: $font-heading;
-    color: black;
+    color: $basic-black;
     font-weight: 600;
     letter-spacing: 0.2rem;
     text-decoration: none;
@@ -68,7 +69,12 @@ $delete-btn-color: rgb(236, 58, 58);
 
     &:hover {
         text-decoration: underline;
-        color: $hover-color, 10%;
+        color: $hover-color;
         text-underline-offset: 0.5rem;
+
+        // Ändrar hover vid mindre skärmar
+        @media (max-width: 800px) {
+            color: $basic-black;
+        }
     }
 }
