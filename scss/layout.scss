@@ -48,10 +48,11 @@ nav {
   }
 }
 
-#active {
+// Klass för aktiv-länk
+.active {
   color: abstracts.$link-color;
   text-decoration: underline;
-  text-decoration-color: black;
+  text-decoration-color: abstracts.$basic-black;
   text-underline-offset: 0.5rem;
   background-color: abstracts.$bg-color-white;
   padding: 0.5rem 1rem 1rem 1rem;
@@ -107,7 +108,7 @@ footer {
   width: 100%;
   height: auto;
   padding: 2rem 1rem;
-  margin: 5rem 0 0 0;
+  margin: 10rem 0 0 0;
   background-color: abstracts.$primary-color;
   color: abstracts.$light-text-color;
   text-align: center;
@@ -142,7 +143,7 @@ footer {
           color: abstracts.$light-text-color;
 
           &:active {
-            color: black;
+            color: abstracts.$basic-black
           }
         }
       }
@@ -188,6 +189,7 @@ footer {
     background-color: abstracts.$mobile-nav-color;
     color: white !important;
     border: none;
+    cursor: pointer;
     @include abstracts.heading-style(2.5rem, 2.5rem, 600);
     padding: 0 6rem 0 0;
     z-index: 3; // Ser till att knappen är över både menyn och container
@@ -212,6 +214,11 @@ footer {
       opacity: 0; // Gör kryssikonen är osynlig initialt
       transform: translate(-50%, -50%) rotate(-360deg); // Startläge för rotationen vid övergång
     }
+  }
+
+  .active {
+    color: abstracts.$light-text-color;
+    background-color: abstracts.$link-color;
   }
 
   footer {

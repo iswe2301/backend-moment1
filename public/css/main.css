@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 #submit:hover, .delete-btn:hover, .edit-btn:hover {
-  background-color: hotpink;
+  background-color: #ff369b;
 }
 
 nav ul li a {
@@ -29,8 +29,13 @@ nav ul li a {
 }
 nav ul li a:hover {
   text-decoration: underline;
-  color: hotpink, 10%;
+  color: #ff369b;
   text-underline-offset: 0.5rem;
+}
+@media (max-width: 800px) {
+  nav ul li a:hover {
+    color: black;
+  }
 }
 
 * {
@@ -114,7 +119,7 @@ a {
   color: hotpink;
 }
 a:hover {
-  color: hotpink;
+  color: #ff369b;
 }
 
 input,
@@ -187,7 +192,7 @@ nav ul li {
   list-style-type: none;
   margin: 0 1rem;
 }
-#active {
+.active {
   color: hotpink;
   text-decoration: underline;
   text-decoration-color: black;
@@ -218,7 +223,7 @@ table {
 table th {
   padding: 0 1rem;
   text-align: center;
-  background-color: rgb(255, 219, 225);
+  background-color: rgb(190, 190, 190);
   border-bottom: 1px solid #ccc;
 }
 table td {
@@ -227,7 +232,7 @@ table td {
   border-bottom: 1px solid #ccc;
 }
 table tbody tr:hover {
-  background-color: #eaeaea;
+  background-color: #d5d5d5;
 }
 
 #responsive-table {
@@ -239,7 +244,7 @@ footer {
   width: 100%;
   height: auto;
   padding: 2rem 1rem;
-  margin: 5rem 0 0 0;
+  margin: 10rem 0 0 0;
   background-color: rgb(32, 32, 32);
   color: white;
   text-align: center;
@@ -302,6 +307,7 @@ footer p {
     background-color: hotpink;
     color: white !important;
     border: none;
+    cursor: pointer;
     font-size: 2.5rem;
     font-family: "Montserrat", "Roboto", Helvetica, sans-serif;
     color: rgb(32, 32, 32);
@@ -326,6 +332,10 @@ footer p {
     opacity: 0;
     transform: translate(-50%, -50%) rotate(-360deg);
   }
+  .active {
+    color: white;
+    background-color: hotpink;
+  }
   footer {
     padding-bottom: 7rem;
     margin: 0;
@@ -348,7 +358,7 @@ footer p {
   background-color: hotpink;
 }
 #submit:hover {
-  background-color: #ff369b;
+  background-color: #ff0381;
 }
 
 .delete-btn {
@@ -359,9 +369,11 @@ footer p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-decoration: none;
 }
 .delete-btn:hover {
   background-color: #de1515;
+  color: white;
 }
 
 .edit-btn {
@@ -393,6 +405,18 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+#error-message {
+  display: none;
+  justify-content: center;
+  color: rgb(236, 58, 58);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.required {
+  color: rgb(236, 58, 58);
 }
 
 @media (max-width: 600px) {
