@@ -1,43 +1,39 @@
-// Inkluderar msql-paketet
-const mysql = require("mysql");
+// Inkluderar postgre
+const { Client } = require("pg");
 
-// Anslutningsinställningar
-const connection = mysql.createConnection({
-    host: "localhost",
-    user: "courses",
-    password: "mysqlpassword",
-    database: "courses"
+// Inkluderar .env-filen med anslutningsinställningar
+require("dotenv").config();
+
+// Ansluter till databasen
+const client = new Client({
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    ssl: {
+        rejectUnauthorized: false,
+    }
 });
 
 // Kontrollerar errors vid anslutning
-connection.connect((error) => {
+client.connect((error) => {
     if (error) {
         console.error("Anslutning misslyckades: " + error); // Skriver ut felmeddelande
         return;
     }
-    console.log("Ansluten till MySQL!") // Skriver ut success-meddelande vid lyckad anslutning
+    console.log("Ansluten till databasen!") // Skriver ut success-meddelande vid lyckad anslutning
 });
 
-/* Skapar ny databas med SQL-fråga
-connection.query("CREATE DATABASE courses;", (error, results) => {
-    if(error) throw error;
-    console.log("Databas skapad");
-}); */
-
-/* Skapar en drop-tabell till databasen med SQL-fråga
-connection.query("DROP TABLE IF EXISTS Course;", (error, results) => {
+// Skapar en tabell
+client.query(`
+CREATE TABLE course (
+    id SERIAL PRIMARY KEY,
+    coursecode  VARCHAR(15) NOT NULL,
+    coursename  VARCHAR(150) NOT NULL,
+    syllabus    VARCHAR(255) NOT NULL,
+    progression CHAR(1) NOT NULL,
+    createdate  TIMESTAMP DEFAULT CURRENT_TIMESTAMP)`, (error, results) => {
     if (error) throw error;
-    console.log("Tabellen Course raderad.");
-}); */
-
-/* Skapar en tabell till databasen med SQL-fråga
-connection.query(`CREATE TABLE Course (
-    CourseID    INT AUTO_INCREMENT PRIMARY KEY,
-    CourseCode  VARCHAR(15) NOT NULL,
-    CourseName  VARCHAR(150) NOT NULL,
-    Syllabus    VARCHAR(255) NOT NULL,
-    Progression CHAR(1) NOT NULL,
-    CreateDate  DATETIME DEFAULT CURRENT_TIMESTAMP)`, (error, results) => {
-    if (error) throw error;
-    console.log("Tabellen Course skapad.");
-}); */
+    console.log("Tabellen course skapad!");
+});
