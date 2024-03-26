@@ -99,17 +99,6 @@ app.post("/", async (req, res) => {
         });
 });
 
-app.get("/check-rows", async (req, res) => {
-    try {
-        const result = await client.query("SELECT * FROM Course");
-        console.log(result.rows); // Loggar alla rader från tabellen Course
-        res.send(result.rows); // Skickar alla rader som svar, så du kan se dem i webbläsaren
-    } catch (error) {
-        console.error("Fel vid hämtning av rader: ", error);
-        res.send("Fel vid hämtning av rader");
-    }
-});
-
 // Startar applikationen/servern
 app.listen(process.env.PORT, () => {
     console.log("Server startad på port: " + process.env.PORT);
