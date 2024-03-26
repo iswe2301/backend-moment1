@@ -44,17 +44,17 @@
                         <% courses.forEach((course)=> { %>
                             <tr>
                                 <td>
-                                    <%= course.CourseCode %>
+                                    <%= course.coursecode %>
                                 </td>
                                 <td>
-                                    <%= course.CourseName %>
+                                    <%= course.coursename %>
                                 </td>
-                                <td><a href="<%= course.Syllabus %>" target="_blank">Kursplan</a></td>
+                                <td><a href="<%= course.syllabus %>" target="_blank">Kursplan</a></td>
                                 <td>
-                                    <%= course.Progression %>
+                                    <%= course.progression %>
                                 </td>
                                 <td>
-                                    <a href="/delete-course/<%= course.CourseID %>" class="delete-btn">Radera <i
+                                    <a href="/delete-course/<%= course.id %>" class="delete-btn">Radera <i
                                             class='fa fa-solid fa-trash-can'></i></a>
                                 </td>
                             </tr>
